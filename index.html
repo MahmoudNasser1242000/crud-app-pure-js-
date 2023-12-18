@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ================fontawesome================ -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- ================fontawesome================ -->
+
+    <!-- ================google fonts================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- ================google fonts================ -->
+
+    <!-- ================bootstrap================ -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- ================bootstrap================ -->
+    <title>Crud App</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="text-center my-5">
+            <h1 class="mx-auto">Bookmarker</h1>
+        </div>
+
+        <p class="text-center intro">
+            <i class="fa-solid fa-bookmark"></i>
+            <span>Bookmark your favorite sites</span>
+            <i class="fa-solid fa-bookmark"></i>
+        </p>
+
+        <main class="form pb-5 mt-4 mx-auto">
+            <form>
+                <div class="mb-3">
+                    <label for="site-name" class="form-label">Site Name</label>
+                    <input type="text" class="form-control rounded-1 site-field" id="site-name">
+                </div>
+                <div class="mb-3">
+                    <label for="site-url" class="form-label">URL</label>
+                    <input type="url" class="form-control rounded-1 site-field" id="site-url">
+                </div>
+                <div class="mb-3">
+                    <label for="search-url" class="form-label">Search</label>
+                    <input type="search" class="form-control rounded-1 site-field" id="search-url">
+                </div>
+                <button type="submit" id="add-sites"
+                    class="btn btn-success d-block ms-auto rounded-1">
+                    Add Website
+                </button>
+            </form>
+        </main>
+
+        <table class="table text-center mx-auto mt-4">
+            <thead>
+                <tr>
+                    <th>#index</th>
+                    <th>website name</th>
+                    <th>visit</th>
+                    <th>control</th>
+                </tr>
+            </thead>
+            <tbody id="t-body">
+
+            </tbody>
+        </table>
+    </section>
+
+    <!--=== Modal=== -->
+    <section class="error-modal" id="error-modal">
+        <div class="error-info rounded-1 p-4" id="error-info">
+            <div class="close-error d-flex justify-content-between align-items-center pb-2 mb-4">
+                <div>
+                    <span class="bg-danger"></span>
+                    <span class="bg-warning"></span>
+                    <span class="bg-success"></span>
+                </div>
+                <i class="fa-solid fa-xmark fs-3" id="close-error"></i>
+            </div>
+            <p class="text-dark">
+                Site Name or Url is not valid, Please follow the rules below :
+            </p>
+            <ul class="px-3">
+                <li>
+                    <i class="fa-solid fa-circle-right text-success fs-5 me-2"></i>
+                    <span>Site name must contain at least 3 characters</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-right text-success fs-5 me-2"></i>
+                    <span>Site URL must be a valid one</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <!-- ================bootstrap================ -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ================bootstrap================ -->
+</body>
+
+</html>

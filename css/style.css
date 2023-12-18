@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+::selection {
+    background-color: #3ca55c;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px !important;
+    font-weight: 500;
+    position: relative;
+    width: fit-content;
+}
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3ca55c;
+    height: 25%;
+    z-index: -1;
+    transition: 0.5s;
+}
+h1:hover::before {
+    height: 70%;
+}
+
+.intro {
+    font-size: 25px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input.site-field:focus {
+    border-color: #3ca55c !important;
+    box-shadow: 0 0 0 .25rem #3ca55c6b !important;
+}
+
+/* ============media query============ */
+@media screen and (max-width: 992px)  {
+    main,
+    table {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .container {
+        max-width: 85% !important;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    main,
+    table {
+        width: 75% !important;
+    }
+}
+/* ============media query============ */
+
+/* =========================modal========================= */
+.error-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.37);
+    height: 100%;
+    display: none;
+}
+.show-modal {
+    display: block !important;
+}
+
+.error-info {
+    position: absolute;
+    width: 50%;
+    /* height: 265px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: none;
+    animation: show-error-info 0.3s linear 1 forwards;
+}
+.show-error-info {
+    display: block !important;
+}
+@keyframes show-error-info {
+    0% {
+        top: 45%;
+        opacity: 0;
+    } 100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.close-error span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.error-info p {
+    font-size: 25px;
+    font-family: "Bree Serif", serif;
+}
+
+ul li span {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.fa-xmark {
+    transition: all 0.5s;
+}
+.fa-xmark:hover {
+    transform: rotate(180deg);
+}
+
+/* ============media query============ */
+@media screen and (max-width: 600px)  {
+    .error-info {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .error-info {
+        width: 85%;
+    }
+}
+/* ============media query============ */
