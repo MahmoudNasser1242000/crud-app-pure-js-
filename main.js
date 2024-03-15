@@ -37,7 +37,7 @@ siteName.addEventListener("keyup", function () {
     siteName.classList.remove("site-field");
 });
 
-var regexp =/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+var regexp =/^(ftp|http|https):\/\/www\.\w{3,}\.com$/;
 siteUrl.addEventListener("keyup", function () {
     if (!regexp.test(siteUrl.value)) {
         siteUrl.classList.add("is-invalid");
@@ -53,6 +53,14 @@ siteUrl.addEventListener("keyup", function () {
 function clearInputs() {
     siteName.value = "";
     siteUrl.value = "";
+    
+    siteName.classList.add("site-field");
+    siteName.classList.remove("is-valid");
+    siteName.classList.remove("is-invalid");
+
+    siteUrl.classList.add("site-field");
+    siteUrl.classList.remove("is-valid");
+    siteUrl.classList.remove("is-invalid");
 }
 
 // add or update website
